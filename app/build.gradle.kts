@@ -71,4 +71,25 @@ dependencies {
     //dagger hilt
     implementation("com.google.dagger:hilt-android:2.50")
     annotationProcessor("com.google.dagger:hilt-compiler:2.50")
+//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+//    kapt "androidx.hilt:hilt-compiler:1.0.0"
+//
+//    // Compose dependencies
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0-beta01"
+//    implementation "androidx.navigation:navigation-compose:2.4.0-alpha09"
+//    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+//    implementation "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
+//
+//    // Coroutines
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+//    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.1'
+//
+    // Room
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+//
+//    // Kotlin Extensions and Coroutines support for Room
+//    implementation "androidx.room:room-ktx:2.3.0"
+
 }

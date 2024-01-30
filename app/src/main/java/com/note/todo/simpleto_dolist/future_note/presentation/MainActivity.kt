@@ -1,4 +1,4 @@
-package com.note.todo.simpleto_dolist
+package com.note.todo.simpleto_dolist.future_note.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
