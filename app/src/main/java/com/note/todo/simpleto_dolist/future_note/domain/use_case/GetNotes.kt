@@ -5,7 +5,7 @@ import com.note.todo.simpleto_dolist.future_note.domain.repository.NoteRepositor
 import com.note.todo.simpleto_dolist.future_note.domain.util.NoteOrder
 import com.note.todo.simpleto_dolist.future_note.domain.util.OrderType
 import kotlinx.coroutines.flow.map
-import java.util.concurrent.Flow
+import kotlinx.coroutines.flow.Flow
 
 class GetNotes(
     val repository: NoteRepository

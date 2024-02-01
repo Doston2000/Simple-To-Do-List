@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.note.todo.simpleto_dolist.future_note.data.data_source.NoteDatabase
 import com.note.todo.simpleto_dolist.future_note.data.repository.NoteRepositoryImpl
 import com.note.todo.simpleto_dolist.future_note.domain.repository.NoteRepository
+import com.note.todo.simpleto_dolist.future_note.domain.use_case.AddNote
 import com.note.todo.simpleto_dolist.future_note.domain.use_case.DeleteNote
 import com.note.todo.simpleto_dolist.future_note.domain.use_case.GetNotes
 import com.note.todo.simpleto_dolist.future_note.domain.use_case.NoteUseCases
@@ -41,7 +42,8 @@ object NoteModule {
     fun providerNoteUseCases(repository: NoteRepository): NoteUseCases {
         return NoteUseCases(
             getNotes = GetNotes(repository),
-            deleteNote = DeleteNote(repository)
+            deleteNote = DeleteNote(repository),
+            addNote = AddNote(repository)
         )
     }
 
