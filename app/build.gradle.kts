@@ -68,17 +68,20 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
+    // for rememberScaffoldState
+    implementation("androidx.compose.material:material:1.6.0")
+
     //dagger hilt
     implementation("com.google.dagger:hilt-android:2.50")
     annotationProcessor("com.google.dagger:hilt-compiler:2.50")
-//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
-//    kapt "androidx.hilt:hilt-compiler:1.0.0"
+//    implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
+//    annotationProcessor("androidx.hilt:hilt-compiler:1.0.0")
 //
 //    // Compose dependencies
 //    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0-beta01"
-//    implementation "androidx.navigation:navigation-compose:2.4.0-alpha09"
+    implementation("androidx.navigation:navigation-compose:2.4.0-alpha09")
 //    implementation "androidx.compose.material:material-icons-extended:$compose_version"
-//    implementation "androidx.hilt:hilt-navigation-compose:1.0.0-alpha03"
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha03")
 //
 //    // Coroutines
 //    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
