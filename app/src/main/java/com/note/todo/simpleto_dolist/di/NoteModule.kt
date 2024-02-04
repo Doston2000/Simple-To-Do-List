@@ -7,6 +7,7 @@ import com.note.todo.simpleto_dolist.future_note.data.repository.NoteRepositoryI
 import com.note.todo.simpleto_dolist.future_note.domain.repository.NoteRepository
 import com.note.todo.simpleto_dolist.future_note.domain.use_case.AddNote
 import com.note.todo.simpleto_dolist.future_note.domain.use_case.DeleteNote
+import com.note.todo.simpleto_dolist.future_note.domain.use_case.GetNote
 import com.note.todo.simpleto_dolist.future_note.domain.use_case.GetNotes
 import com.note.todo.simpleto_dolist.future_note.domain.use_case.NoteUseCases
 import dagger.Module
@@ -43,7 +44,8 @@ object NoteModule {
         return NoteUseCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            addNote = AddNote(repository)
+            addNote = AddNote(repository),
+            getNote = GetNote(repository)
         )
     }
 
