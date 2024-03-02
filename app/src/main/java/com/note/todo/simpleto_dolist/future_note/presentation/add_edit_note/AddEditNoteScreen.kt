@@ -22,6 +22,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.runtime.Composable
@@ -81,7 +82,7 @@ fun AddEditNoteScreen(
             FloatingActionButton(onClick = {
                 viewModel.onEvent(AddEditNoteEvent.SaveNote)
             }, backgroundColor = MaterialTheme.colors.primary) {
-                Icon(imageVector = Icons.Default.Send, contentDescription = "Save note")
+                Icon(imageVector = Icons.Default.CheckCircle, contentDescription = "Save note")
             }
         },
         scaffoldState = scaffoldState

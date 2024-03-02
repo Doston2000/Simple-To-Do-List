@@ -30,6 +30,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -69,11 +70,11 @@ fun NoteScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "Your note", style = MaterialTheme.typography.body1)
+                Text(text = "Your note", style = MaterialTheme.typography.body1, color = Color.Black)
                 IconButton(onClick = {
                     viewmodel.onEvent(NotesEvent.ToggleOrderSection)
                 }) {
-                    Icon(imageVector = Icons.Default.Build, contentDescription = "Sort")
+                    Icon(imageVector = Icons.Default.Build, contentDescription = "Sort", tint = Color.Black)
                 }
             }
             AnimatedVisibility(
