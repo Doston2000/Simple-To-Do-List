@@ -32,8 +32,12 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.note.todo.simpleto_dolist.future_note.presentation.notes.components.NoteItem
 import com.note.todo.simpleto_dolist.future_note.presentation.notes.components.OrderSection
 import com.note.todo.simpleto_dolist.future_note.presentation.util.Screen
@@ -66,6 +70,7 @@ fun NoteScreen(
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
+            BannerAd()
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
@@ -121,4 +126,17 @@ fun NoteScreen(
         //delete this code later. because this code not plane
         it.calculateTopPadding()
     }
+}
+
+@Composable
+fun BannerAd(modifier: Modifier = Modifier) {
+    AndroidView(
+        modifier = modifier.fillMaxWidth(),
+        factory = {
+            AdView(it).apply {
+                setAdSize(AdSize.BANNER)
+                adUnitId = "ca-app-pub-4130779705872309/2971824218"
+                loadAd(AdRequest.Builder().build())
+            }
+        })
 }

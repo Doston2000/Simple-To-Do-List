@@ -96,4 +96,7 @@ dependencies {
     //noinspection KaptUsageInsteadOfKsp
     kapt("androidx.room:room-compiler:$room_version")
     implementation("androidx.room:room-ktx:2.6.1")
+
+    //AdMob
+    implementation("com.google.android.gms:play-services-ads:23.0.0")
 }

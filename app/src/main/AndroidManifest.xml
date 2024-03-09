@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SimpleToDoList"
         tools:targetApi="31">
+
         <activity
             android:name=".future_note.presentation.MainActivity"
             android:exported="true"
@@ -24,6 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4130779705872309~1850314239"/>
+
     </application>
 
 </manifest>
