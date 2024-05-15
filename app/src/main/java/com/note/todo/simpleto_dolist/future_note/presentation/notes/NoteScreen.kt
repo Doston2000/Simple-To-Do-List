@@ -46,9 +46,9 @@ import kotlinx.coroutines.launch
 @Composable
 fun NoteScreen(
     navController: NavController,
-    viewmodel: NotesViewModel = hiltViewModel()
+    viewModel: NotesViewModel = hiltViewModel()
 ) {
-    val state = viewmodel.state.value
+    val state = viewModel.state.value
     val scaffoldState = rememberScaffoldState()
     val scope = rememberCoroutineScope()
 
@@ -75,11 +75,19 @@ fun NoteScreen(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "Your note", style = MaterialTheme.typography.body1, color = Color.Black)
+                Text(
+                    text = "Your note",
+                    style = MaterialTheme.typography.body1,
+                    color = Color.Black
+                )
                 IconButton(onClick = {
-                    viewmodel.onEvent(NotesEvent.ToggleOrderSection)
+                    viewModel.onEvent(NotesEvent.ToggleOrderSection)
                 }) {
-                    Icon(imageVector = Icons.Default.Build, contentDescription = "Sort", tint = Color.Black)
+                    Icon(
+                        imageVector = Icons.Default.Build,
+                        contentDescription = "Sort",
+                        tint = Color.Black
+                    )
                 }
             }
             AnimatedVisibility(
@@ -92,7 +100,7 @@ fun NoteScreen(
                         .fillMaxWidth()
                         .padding(vertical = 16.dp),
                     noteOrder = state.noteOrder,
-                    onOrderChange = { viewmodel.onEvent(NotesEvent.Order(it)) })
+                    onOrderChange = { viewModel.onEvent(NotesEvent.Order(it)) })
             }
             Spacer(modifier = Modifier.height(16.dp))
             LazyColumn(modifier = Modifier.fillMaxSize()) {
@@ -105,14 +113,14 @@ fun NoteScreen(
                                 navController.navigate(Screen.AddEditNoteScreen.route + "?noteId=${note.id}&noteColor=${note.color}")
                             },
                         onDeleteClick = {
-                            viewmodel.onEvent(NotesEvent.DeleteNote(note))
+                            viewModel.onEvent(NotesEvent.DeleteNote(note))
                             scope.launch {
-                                var result = scaffoldState.snackbarHostState.showSnackbar(
+                                val result = scaffoldState.snackbarHostState.showSnackbar(
                                     message = "Note Deleted",
                                     actionLabel = "Undo"
                                 )
                                 if (result == SnackbarResult.ActionPerformed) {
-                                    viewmodel.onEvent(NotesEvent.RestoreNote)
+                                    viewModel.onEvent(NotesEvent.RestoreNote)
                                 }
                             }
                         }
@@ -135,7 +143,7 @@ fun BannerAd(modifier: Modifier = Modifier) {
         factory = {
             AdView(it).apply {
                 setAdSize(AdSize.BANNER)
-                adUnitId = "ca-app-pub-4130779705872309/2971824218"
+                adUnitId = "your_banner_key"
                 loadAd(AdRequest.Builder().build())
             }
         })
